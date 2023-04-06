@@ -1,22 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Танчики онлайн</title>
+    <title>Динозаврик</title>
     <style>
-        /* Стили для игрового поля */
-        #game-field {
-            width: 600px;
-            height: 600px;
-            background-color: grey;
+        /* Стили для динозаврика */
+        #dinosaur {
+            position: absolute;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background-color: white;
         }
     </style>
 </head>
 <body>
-    <div id="game-field"></div>
+    <h1>Динозаврик</h1>
 
-    <!-- Подключение скриптов и библиотек -->
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="game.js"></script>
+    <!-- Изображение Мишки Фредди -->
+    <img src="bear.png" alt="Мишка Фредди" id="bear-img">
+
+    <!-- Динозаврик -->
+    <div id="dinosaur"></div>
+
+    <!-- Подключение библиотеки jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- JavaScript код для управления динозавриком -->
+    <script>
+        // Определение переменных
+        var dinosaur = $("#dinosaur");
+        var bearImg = $("#bear-img");
+        var jumpHeight = 150;
+        var jumpSpeed = 10;
+        var fallSpeed = 10;
+        var isJumping = false;
+        var isFalling = false;
+
+        // Функция для обновления координат динозаврика
+        function update() {
+            if (isJumping) {
+                jump();
+            } else if (isFalling) {
+                fall();
+            }
+        }
+
+        // Функция для прыжка динозаврика
+        function jump() {
+            if (jumpHeight > 0) {
+                var newY = parseInt(dinosaur.css("bottom")) + jumpSpeed;
+                dinosaur.css("bottom", newY + "px");
+                jumpHeight -= jumpSpeed;
+            } else {
+                isJumping = false;
+                isFalling = true;
+            }
+        }
+
+        // Функция для падения динозаврика
+        function fall() {
+            var newY = parseInt(dinosaur.css("bottom")) - fallSpeed;
+            dinosaur.css("bottom", newY + "px");
+
+            if (newY < 0) {
+                isFalling = false;
+            }
+        }
+
+        // Обработчик события нажатия на клавишу
+        $(document).on("keydown", function(event) {
+            if (event.keyCode == 32) {  // Клавиша "Пробел"
+                if (!isJumping && !isFalling) {
+                    isJumping = true;
+                }
+            }
+        });
+
+        // Главный цикл игры
+        setInterval(function() {
+            update();
+        }, 50);
+    </script>
 </body>
 </html>
