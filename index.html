@@ -4,7 +4,7 @@
     <title>Login Form</title>
     <style>
         body {
-            background-image: url('https://cdn.discordapp.com/attachments/1064146226691444776/1093838361413820496/v2.png');
+            background-image: url('https://images.unsplash.com/photo-1440613908111-bc00e0e228cd');
             background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, Helvetica, sans-serif;
@@ -52,6 +52,13 @@
         button:hover {
             background-color: #45a049;
         }
+
+        .registration-link {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +71,8 @@
         <input type="password" id="password" name="password" required>
 
         <button type="submit">Login</button>
+
+        <div class="registration-link" onclick="redirectToRegistration()">Регистрация</div>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -96,6 +105,10 @@
                 document.getElementById("username").value = "";
                 document.getElementById("password").value = "";
             });
+        }
+
+        function redirectToRegistration() {
+            window.location.href = "reg.html";
         }
     </script>
 </body>
